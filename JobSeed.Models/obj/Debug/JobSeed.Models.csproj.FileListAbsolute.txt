@@ -1,0 +1,15 @@
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Models.dll.config
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Models.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Models.pdb
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\EntityFramework.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\EntityFramework.xml
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.csproj.CoreCompileInputs.cache
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.csproj.CopyComplete
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.pdb

@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using JobSeed.WebMVC.Models;
+using JobSeed.Data;
 
 namespace JobSeed.WebMVC.Controllers
 {

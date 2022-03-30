@@ -1,0 +1,2 @@
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.WebMVC\obj\Debug\JobSeed.WebMVC.csproj.AssemblyReference.cache
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.WebMVC\obj\Debug\JobSeed.WebMVC.csproj.CoreCompileInputs.cache
