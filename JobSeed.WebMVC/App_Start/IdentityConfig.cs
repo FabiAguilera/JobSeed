@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using JobSeed.WebMVC.Models;
+using JobSeed.Data;
+using JobSeed.Data;
 
 namespace JobSeed.WebMVC
 {

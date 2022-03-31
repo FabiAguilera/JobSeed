@@ -1,24 +1,11 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobSeed.Data
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
-    {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
-    }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -32,12 +19,12 @@ namespace JobSeed.Data
             return new ApplicationDbContext();
         }
 
-        // public DbSet<Job> Jobs { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         // public DbSet<JobStatus> JobStatus { get; set; }
         // public DbSet<Document> Documents { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
@@ -47,21 +34,21 @@ namespace JobSeed.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+    }
 
-        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
         {
-            public IdentityUserLoginConfiguration()
-            {
-                HasKey(iul => iul.UserId);
-            }
+            HasKey(iul => iul.UserId);
         }
-        public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-        {
-            public IdentityUserRoleConfiguration()
-            {
-                HasKey(iur => iur.UserId);
-            }
+    }
 
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
         }
     }
 
