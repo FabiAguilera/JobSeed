@@ -13,6 +13,7 @@ using Microsoft.Owin.Security;
 using JobSeed.WebMVC.Models;
 using JobSeed.Data;
 using JobSeed.Data;
+using JobSeedFinal.Data;
 
 namespace JobSeed.WebMVC
 {

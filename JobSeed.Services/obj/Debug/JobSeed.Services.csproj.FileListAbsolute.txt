@@ -13,4 +13,3 @@ C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Services\obj\Debug\JobSeed.Servic
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Services\obj\Debug\JobSeed.Services.csproj.CopyComplete
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Services\obj\Debug\JobSeed.Services.dll
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Services\obj\Debug\JobSeed.Services.pdb
-C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Services\obj\Debug\JobSeed.Services.csproj.AssemblyReference.cache

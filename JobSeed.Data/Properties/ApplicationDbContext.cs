@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using JobSeed.Data;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace JobSeed.Data
+namespace JobSeedFinal.Data
 {
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -19,12 +19,8 @@ namespace JobSeed.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Job> Jobs { get; set; }
-        // public DbSet<JobStatus> JobStatus { get; set; }
-        // public DbSet<Document> Documents { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
@@ -44,12 +40,11 @@ namespace JobSeed.Data
         }
     }
 
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
     {
         public IdentityUserRoleConfiguration()
         {
             HasKey(iur => iur.UserId);
         }
     }
-
 }
