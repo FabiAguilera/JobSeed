@@ -19,6 +19,8 @@ namespace JobSeedFinal.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

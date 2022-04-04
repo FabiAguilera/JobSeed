@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JobCreate.cs" />
+    <Compile Include="JobDetail.cs" />
+    <Compile Include="JobEdit.cs" />
+    <Compile Include="JobListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
