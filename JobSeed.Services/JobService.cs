@@ -17,6 +17,24 @@ namespace JobSeed.Services
             _userId = userId;
         }
 
+        public IEnumerable<JobListItem> GetJobs()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx.Jobs
+                    .Select(j => new JobListItem
+                    {
+                        JobId = j.JobId,
+                        Position = j.Position,
+                        Company = j.Company,
+                        URL = j.URL,
+                        Salary = j.Salary,
+                        Location = j.Location
+                    });
+                return query.ToArray();
+            }
+        }
         public bool CreateJob(JobCreate model)
         {
             using (var ctx = new ApplicationDbContext())

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JobSeed.Services;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +14,21 @@ namespace JobSeed.WebMVC.Controllers
         // GET: Job
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var service = new JobService(userId);
+            var model = service.GetJobs();
+
+            return View(model);
         }
+    }
+
+    public ActionResult Create()
+    {
+        return View();
+    }
+
+    public JobService CreateJobService()
+    {
+        return new JobService(User.Identity.GetUserId);
     }
 }
