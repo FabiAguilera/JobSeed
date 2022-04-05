@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using JobSeed.Data;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace JobSeedFinal.Data
+namespace JobSeed.Data
 {
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
