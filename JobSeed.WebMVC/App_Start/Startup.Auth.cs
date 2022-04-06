@@ -7,7 +7,6 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using JobSeed.WebMVC.Models;
 using JobSeed.Data;
-using JobSeedFinal.Data;
 
 namespace JobSeed.WebMVC
 {
