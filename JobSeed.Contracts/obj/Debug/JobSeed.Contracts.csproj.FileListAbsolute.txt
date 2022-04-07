@@ -3,3 +3,4 @@ C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Contracts\bin\Debug\JobSeed.Contr
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Contracts\obj\Debug\JobSeed.Contracts.csproj.CoreCompileInputs.cache
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Contracts\obj\Debug\JobSeed.Contracts.dll
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Contracts\obj\Debug\JobSeed.Contracts.pdb
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Contracts\obj\Debug\JobSeed.Contracts.csproj.AssemblyReference.cache
