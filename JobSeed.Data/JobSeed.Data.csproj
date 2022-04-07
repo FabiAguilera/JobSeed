@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Document.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Migrations\202204061908511_jobMigrate.cs" />
     <Compile Include="Migrations\202204061908511_jobMigrate.Designer.cs">

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -28,7 +29,13 @@ namespace JobSeed.Data
 
         public string FullName => $"FistName + LastName";
 
-        public virtual ICollection<Job> Jobs { get; set; }
+        [ForeignKey("Job")]
+        public int JobId { get; set; }
+        public virtual Job Job { get; set; }
+
+        [ForeignKey("Document")]
+        public string DocumentId { get; set; }
+        public virtual Document Document { get; set; }
     }
 
 }

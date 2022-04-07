@@ -10,7 +10,7 @@ namespace JobSeed.Data
 {
     public class Document
     {
-        [Required]
+        [Key]
         public int DocumentId { get; set; }
 
         [Required]
@@ -24,9 +24,9 @@ namespace JobSeed.Data
        
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        [ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
+        
 
     }
 }
