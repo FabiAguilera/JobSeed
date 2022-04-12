@@ -19,6 +19,9 @@ namespace JobSeed.Data
             return userIdentity;
         }
 
+        [Key]
+        public string UserId { get; set; }
+
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -29,13 +32,8 @@ namespace JobSeed.Data
 
         public string FullName => $"FistName + LastName";
 
-        [ForeignKey("Job")]
-        public int JobId { get; set; }
-        public virtual Job Job { get; set; }
-
-        [ForeignKey("Document")]
-        public string DocumentId { get; set; }
-        public virtual Document Document { get; set; }
+        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
     }
 
 }

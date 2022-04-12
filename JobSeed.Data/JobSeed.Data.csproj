@@ -56,9 +56,9 @@
   <ItemGroup>
     <Compile Include="Document.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Migrations\202204061908511_jobMigrate.cs" />
-    <Compile Include="Migrations\202204061908511_jobMigrate.Designer.cs">
-      <DependentUpon>202204061908511_jobMigrate.cs</DependentUpon>
+    <Compile Include="Migrations\202204111356530_secondMig.cs" />
+    <Compile Include="Migrations\202204111356530_secondMig.Designer.cs">
+      <DependentUpon>202204111356530_secondMig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\ApplicationUser.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204061908511_jobMigrate.resx">
-      <DependentUpon>202204061908511_jobMigrate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204111356530_secondMig.resx">
+      <DependentUpon>202204111356530_secondMig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

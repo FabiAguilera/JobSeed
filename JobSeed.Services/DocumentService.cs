@@ -27,7 +27,8 @@ namespace JobSeed.Services
                     {
                         DocumentId = d.DocumentId,
                         DocumentType = d.DocumentType,
-                        DocumentAdded = d.DocumentAdded
+                        DocumentAdded = d.DocumentAdded,
+                        UserId = d.UserId,
                     });
                 return query.ToArray();
             }
@@ -39,7 +40,8 @@ namespace JobSeed.Services
             {
                 DocumentType = model.DocumentType,
                 DocumentAdded = model.DocumentAdded,
-                DocSubmitted = DateTimeOffset.Now
+                DocSubmitted = DateTimeOffset.Now,
+                UserId = model.UserId,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -61,7 +63,8 @@ namespace JobSeed.Services
                         DocumentId = entity.DocumentId,
                         DocumentType = entity.DocumentType,
                         DocSubmitted = entity.DocSubmitted,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        UserId = entity.UserId,
                     };
             }
         }
@@ -73,6 +76,7 @@ namespace JobSeed.Services
                 var entity = ctx.Documents
                     .Single(e => e.DocumentId == model.DocumentId && e.UserId == _userId);
 
+                entity.DocumentType = model.DocumentType;
                 entity.DocumentAdded = model.DocumentAdded;
                 entity.ModifiedUtc = DateTimeOffset.Now;
 

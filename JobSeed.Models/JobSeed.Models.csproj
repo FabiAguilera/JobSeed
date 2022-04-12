@@ -68,5 +68,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JobSeed.Data\JobSeed.Data.csproj">
+      <Project>{DEAAD23C-764B-4BBB-A768-12CFAF2B3362}</Project>
+      <Name>JobSeed.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

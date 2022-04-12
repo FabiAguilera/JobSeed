@@ -30,7 +30,9 @@ namespace JobSeed.Services
                         Company = j.Company,
                         URL = j.URL,
                         Salary = j.Salary,
-                        Location = j.Location
+                        Location = j.Location,
+                        UserId = j.UserId,
+                        DocumentId = j.DocumentId
                     });
                 return query.ToArray();
             }
@@ -45,7 +47,8 @@ namespace JobSeed.Services
                     Salary = model.Salary,
                     Location = model.Location,
                     UserId = _userId,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    DocumentId = model.DocumentId
                 };
 
                 using (var ctx = new ApplicationDbContext())
@@ -71,7 +74,9 @@ namespace JobSeed.Services
                         Salary = entity.Salary,
                         Location = entity.Location,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        UserId = entity.UserId,
+                        DocumentId = entity.DocumentId
                     };
             }
         }
@@ -89,6 +94,8 @@ namespace JobSeed.Services
                 entity.Salary = model.Salary;
                 entity.Location = model.Location;
                     entity.ModifiedUtc = DateTimeOffset.Now;
+                entity.UserId = model.UserId;
+                entity.DocumentId = model.DocumentId;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -33,9 +33,10 @@ namespace JobSeed.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
+        [ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
-        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
-        public ICollection<Document> Documents { get; set; }
+       public virtual ICollection<Document> Documents { get; set; }
     }
 }
