@@ -46,9 +46,16 @@ namespace JobSeed.Services
 
             using (var ctx = new ApplicationDbContext())
             {
+                entity.Jobs = new List<Job>();
+                foreach (int id in model.JobId)
+                {
+                    var job = ctx.Jobs.Find(id);
+                    entity.Jobs.Add(job);
+                }
                 ctx.Documents.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
         }
 
         public DocumentDetail GetDocumentById(int id)
@@ -69,7 +76,7 @@ namespace JobSeed.Services
             }
         }
 
-        public bool UpdateDocument (DocumentEdit model)
+        public bool UpdateDocument(DocumentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -79,7 +86,13 @@ namespace JobSeed.Services
                 entity.DocumentType = model.DocumentType;
                 entity.DocumentAdded = model.DocumentAdded;
                 entity.ModifiedUtc = DateTimeOffset.Now;
-
+                
+                entity.Jobs = new List<Job>();
+                foreach (int id in model.JobId)
+                {
+                    var job = ctx.Jobs.Find(id);
+                    entity.Jobs.Add(job);
+                }
                 return ctx.SaveChanges() == 1;
             }
         }
