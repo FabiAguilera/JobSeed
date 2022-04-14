@@ -19,18 +19,11 @@ namespace JobSeed.Data
             return userIdentity;
         }
 
-        [Key]
-        public string UserId { get; set; }
-
         [Required]
-        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-
-        public string FullName => $"FistName + LastName";
 
         public virtual ICollection<Job> Jobs { get; set; }
         public virtual ICollection<Document> Documents { get; set; }

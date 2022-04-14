@@ -56,23 +56,13 @@
   <ItemGroup>
     <Compile Include="Document.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Migrations\202204111356530_secondMig.cs" />
-    <Compile Include="Migrations\202204111356530_secondMig.Designer.cs">
-      <DependentUpon>202204111356530_secondMig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Properties\ApplicationUser.cs" />
+    <Compile Include="ApplicationUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\ApplicationDbContext.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204111356530_secondMig.resx">
-      <DependentUpon>202204111356530_secondMig.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

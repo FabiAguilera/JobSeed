@@ -10,13 +10,14 @@ namespace JobSeed.WebMVC.Controllers
 {
     public class DocumentController : Controller
     {
+        [Authorize]
         // GET: Document
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
             var service = new DocumentService(userId);
             var model = service.GetDocs();
-            return View();
+            return View(model);
         }
 
 

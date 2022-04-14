@@ -35,7 +35,7 @@ namespace JobSeed.Data
 
         [ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
        public virtual ICollection<Document> Documents { get; set; }
     }
