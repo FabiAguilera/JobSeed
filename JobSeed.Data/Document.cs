@@ -20,8 +20,11 @@ namespace JobSeed.Data
         public bool DocumentAdded { get; set; }
 
         [Required]
+        [Display(Name = "Document Submitted")]
+
         public DateTimeOffset DocSubmitted { get; set; }
-       
+
+        [Display(Name = "Document Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
         [ForeignKey("ApplicationUser")]

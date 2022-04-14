@@ -27,6 +27,7 @@ namespace JobSeed.Data
 
         public virtual ICollection<Job> Jobs { get; set; }
         public virtual ICollection<Document> Documents { get; set; }
+        public virtual ICollection<JobStatus> JobStatuses { get; set; }
     }
 
 }
