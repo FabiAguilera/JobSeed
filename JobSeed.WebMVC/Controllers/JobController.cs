@@ -107,7 +107,7 @@ namespace JobSeed.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteJob(int id)
         {
             var service = CreateJobService();
             service.DeleteJob(id);

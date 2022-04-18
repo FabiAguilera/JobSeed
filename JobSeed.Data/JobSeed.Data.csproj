@@ -58,6 +58,7 @@
     <Compile Include="Job.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="JobStatus.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplicationDbContext.cs" />
   </ItemGroup>

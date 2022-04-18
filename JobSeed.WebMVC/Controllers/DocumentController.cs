@@ -66,7 +66,7 @@ namespace JobSeed.WebMVC.Controllers
             return View(model);
         }
 
-        // POST:EDIT Job/Edit
+        // POST:EDIT Document/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit (int id, DocumentEdit model)
@@ -88,6 +88,26 @@ namespace JobSeed.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: DELETE
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateDocumentService();
+            var model = service.GetDocumentById(id);
+            return View(model);
+        }
+
+        // POST:DELETE Document/Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDocument(int id)
+        {
+            var service = CreateDocumentService();
+            service.DeleteDocument(id);
+            TempData["SaveResult"] = "Your document was deleted!";
+            return RedirectToAction("Index");
+        }
         public DocumentService CreateDocumentService()
         {
             var userId = User.Identity.GetUserId();
