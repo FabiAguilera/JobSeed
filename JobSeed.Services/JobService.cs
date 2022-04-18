@@ -30,7 +30,8 @@ namespace JobSeed.Services
                         Company = j.Company,
                         URL = j.URL,
                         Salary = j.Salary,
-                        Location = j.Location
+                        Location = j.Location,
+                        UserId = j.UserId,
                     });
                 return query.ToArray();
             }
@@ -38,19 +39,25 @@ namespace JobSeed.Services
         public bool CreateJob(JobCreate model)
         {
             var entity = new Job()
-                {
-                    Position = model.Position,
-                    Company = model.Company,
-                    URL = model.URL,
-                    Salary = model.Salary,
-                    Location = model.Location,
-                    UserId = _userId,
-                    CreatedUtc = DateTimeOffset.Now
-                };
+            {
+                Position = model.Position,
+                Company = model.Company,
+                URL = model.URL,
+                Salary = model.Salary,
+                Location = model.Location,
+                UserId = _userId,
+                CreatedUtc = DateTimeOffset.Now,
+            };
 
-                using (var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Jobs.Add(entity);
+                entity.Documents = new List<Document>();
+                foreach (int id in model.DocumentId)
+                {
+                    var document = ctx.Documents.Find(id);
+                    entity.Documents.Add(document);
+                }
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -71,12 +78,13 @@ namespace JobSeed.Services
                         Salary = entity.Salary,
                         Location = entity.Location,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        UserId = entity.UserId,
                     };
             }
         }
 
-        public bool UpdateJob (JobEdit model)
+        public bool UpdateJob(JobEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -88,8 +96,14 @@ namespace JobSeed.Services
                 entity.URL = model.URL;
                 entity.Salary = model.Salary;
                 entity.Location = model.Location;
-                    entity.ModifiedUtc = DateTimeOffset.Now;
-
+                entity.ModifiedUtc = DateTimeOffset.Now;
+                entity.UserId = model.UserId;
+                entity.Documents = new List<Document>();
+                foreach (int id in model.DocumentId)
+                {
+                    var document = ctx.Documents.Find(id);
+                    entity.Documents.Add(document);
+                }
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -101,6 +115,7 @@ namespace JobSeed.Services
                 var entity = ctx.Jobs
                     .Single(e => e.JobId == jobId && e.UserId == _userId);
 
+                entity.Documents = new List<Document>();
                 ctx.Jobs.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

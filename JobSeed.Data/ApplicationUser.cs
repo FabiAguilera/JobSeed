@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -19,16 +20,14 @@ namespace JobSeed.Data
         }
 
         [Required]
-        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        public string FullName => $"FistName + LastName";
-
+        public virtual ICollection<JobStatus> Status { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
     }
 
 }

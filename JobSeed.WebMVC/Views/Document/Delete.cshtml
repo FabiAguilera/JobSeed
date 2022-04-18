@@ -1,0 +1,59 @@
+﻿@model JobSeed.Models.DocumentDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Document</h2>
+
+<h3> Are you sure you want to delete this document?</h3>
+<div>
+    <h4>Document Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentAdded)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocSubmitted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocSubmitted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Back to Document List", "Index")
+        </div>
+    }
+</div>
+

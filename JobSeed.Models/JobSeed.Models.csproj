@@ -54,15 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentCreate.cs" />
+    <Compile Include="DocumentDetail.cs" />
+    <Compile Include="DocumentEdit.cs" />
+    <Compile Include="DocumentListItem.cs" />
     <Compile Include="JobCreate.cs" />
     <Compile Include="JobDetail.cs" />
     <Compile Include="JobEdit.cs" />
     <Compile Include="JobListItem.cs" />
+    <Compile Include="JobStatusCreate.cs" />
+    <Compile Include="JobStatusDetail.cs" />
+    <Compile Include="JobStatusEdit.cs" />
+    <Compile Include="JobStatusListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JobSeed.Data\JobSeed.Data.csproj">
+      <Project>{DEAAD23C-764B-4BBB-A768-12CFAF2B3362}</Project>
+      <Name>JobSeed.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

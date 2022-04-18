@@ -14,3 +14,6 @@ C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.c
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.dll
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.pdb
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\obj\Debug\JobSeed.Models.csproj.AssemblyReference.cache
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Data.dll
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Data.pdb
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Models\bin\Debug\JobSeed.Data.dll.config

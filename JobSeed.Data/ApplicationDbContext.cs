@@ -20,6 +20,8 @@ namespace JobSeed.Data
         }
 
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<JobStatus> Status { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

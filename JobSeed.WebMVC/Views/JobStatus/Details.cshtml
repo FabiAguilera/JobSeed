@@ -1,0 +1,50 @@
+﻿@model JobSeed.Models.JobStatusDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Job Status</h2>
+
+<div>
+    <h4>Job Status Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUTc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUTc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StatusId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

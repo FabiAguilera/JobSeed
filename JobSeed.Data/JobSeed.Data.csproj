@@ -54,23 +54,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Document.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Migrations\202204061908511_jobMigrate.cs" />
-    <Compile Include="Migrations\202204061908511_jobMigrate.Designer.cs">
-      <DependentUpon>202204061908511_jobMigrate.cs</DependentUpon>
+    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="JobStatus.cs" />
+    <Compile Include="Migrations\202204182216394_thirdMigrate.cs" />
+    <Compile Include="Migrations\202204182216394_thirdMigrate.Designer.cs">
+      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Properties\ApplicationUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\ApplicationDbContext.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204061908511_jobMigrate.resx">
-      <DependentUpon>202204061908511_jobMigrate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204182216394_thirdMigrate.resx">
+      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
