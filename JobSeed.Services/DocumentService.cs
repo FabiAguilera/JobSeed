@@ -71,7 +71,7 @@ namespace JobSeed.Services
                         DocumentType = entity.DocumentType,
                         DocSubmitted = entity.DocSubmitted,
                         ModifiedUtc = entity.ModifiedUtc,
-                        UserId = entity.UserId,
+                        UserId = entity.UserId
                     };
             }
         }

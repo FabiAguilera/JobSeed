@@ -1,4 +1,5 @@
-﻿using JobSeed.Services;
+﻿using JobSeed.Models;
+using JobSeed.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,78 @@ namespace JobSeed.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: Document
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        // POST:CREATE Document/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(DocumentCreate model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            var service = CreateDocumentService();
+
+            if (service.CreateDocument(model))
+            {
+                TempData["SaveResult"] = "Your document was added!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Your document could not be added.");
+            return View(model);
+        }
+
+        // GET: DETAILS
+        public ActionResult Detaild (int id)
+        {
+            var service = CreateDocumentService();
+            var model = service.GetDocumentById(id);
+            return View(model);
+        }
+
+        // GET: EDIT
+        public ActionResult Edit (int id)
+        {
+            var service = CreateDocumentService();
+            var detail = service.GetDocumentById(id);
+            var model = new DocumentEdit
+            {
+                DocumentId = detail.DocumentId,
+                DocumentType = detail.DocumentType
+            };
+            return View(model);
+        }
+
+        // POST:EDIT Job/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (int id, DocumentEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.DocumentId != id)
+            {
+                ModelState.AddModelError("", "Your document ID does not match!");
+                return View(model);
+            }
+
+            var service = CreateDocumentService();
+            if (service.UpdateDocument(model))
+            {
+                TempData["SaveResult"] = "Your document was updated!";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your document could not be updated!");
+            return View(model);
+        }
+
+        public DocumentService CreateDocumentService()
+        {
+            var userId = User.Identity.GetUserId();
+            var service = new DocumentService(userId);
+            return service;
+        }
     }
 }
