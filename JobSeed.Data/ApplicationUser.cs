@@ -25,9 +25,9 @@ namespace JobSeed.Data
         [Required]
         public string LastName { get; set; }
 
+        public virtual ICollection<JobStatus> Status { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }
         public virtual ICollection<Document> Documents { get; set; }
-        public virtual ICollection<JobStatus> JobStatuses { get; set; }
     }
 
 }

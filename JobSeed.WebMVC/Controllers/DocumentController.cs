@@ -46,7 +46,7 @@ namespace JobSeed.WebMVC.Controllers
         }
 
         // GET: DETAILS
-        public ActionResult Detaild (int id)
+        public ActionResult Details (int id)
         {
             var service = CreateDocumentService();
             var model = service.GetDocumentById(id);

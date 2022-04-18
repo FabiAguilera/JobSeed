@@ -11,6 +11,7 @@ namespace JobSeed.Data
     public class JobStatus
     {
         [ForeignKey("Job")]
+        [Key]
         public int StatusId { get; set; }
 
         public enum StatusType 
@@ -31,9 +32,9 @@ namespace JobSeed.Data
         [Display(Name = "Job Status Modified")]
         public DateTimeOffset? ModifiedUTc { get; set; }
 
-        [ForeignKey("ApplicationUser")]
+       [ForeignKey(nameof(ApplicationUser))]
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         // StatusId has PK and FK in table, JobId as PK column in table
         public virtual Job Job { get; set; }

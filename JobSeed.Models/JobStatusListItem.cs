@@ -16,8 +16,10 @@ namespace JobSeed.Models
 
         [Display(Name = "Job Status Established")]
         public DateTimeOffset CreatedUtc { get; set; }
+
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         public virtual Job Job { get; set; }
     }
 }

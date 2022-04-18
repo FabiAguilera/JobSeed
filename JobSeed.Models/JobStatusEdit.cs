@@ -12,8 +12,10 @@ namespace JobSeed.Models
     {
         public int StatusId { get; set; }
         public StatusType Status { get; set; }
+
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         public virtual Job Job { get; set; }
 
     }
