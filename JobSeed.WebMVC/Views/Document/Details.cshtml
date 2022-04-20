@@ -1,0 +1,66 @@
+﻿@model JobSeed.Models.DocumentDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Document Details</h2>
+
+<div>
+    <h4>Document Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocSubmitted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocSubmitted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DocumentId }) |
+    @Html.ActionLink("Back to Document List", "Index")
+</p>
