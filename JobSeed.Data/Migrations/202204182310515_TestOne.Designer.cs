@@ -7,13 +7,13 @@ namespace JobSeed.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class thirdMigrate : IMigrationMetadata
+    public sealed partial class TestOne : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(thirdMigrate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TestOne));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204182216394_thirdMigrate"; }
+            get { return "202204182310515_TestOne"; }
         }
         
         string IMigrationMetadata.Source

@@ -52,12 +52,12 @@ namespace JobSeed.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Jobs.Add(entity);
-                entity.Documents = new List<Document>();
-                foreach (int id in model.DocumentId)
-                {
-                    var document = ctx.Documents.Find(id);
-                    entity.Documents.Add(document);
-                }
+                //entity.Documents = new List<Document>();
+                //foreach (int documentId in model.DocumentId)
+                //{
+                //    var document = ctx.Documents.Find(documentId);
+                //    entity.Documents.Add(document);
+                //}
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -98,6 +98,7 @@ namespace JobSeed.Services
                 entity.Location = model.Location;
                 entity.ModifiedUtc = DateTimeOffset.Now;
                 entity.UserId = model.UserId;
+
                 entity.Documents = new List<Document>();
                 foreach (int id in model.DocumentId)
                 {

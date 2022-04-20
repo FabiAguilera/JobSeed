@@ -28,7 +28,7 @@ namespace JobSeed.Services
                         DocumentId = d.DocumentId,
                         DocumentType = d.DocumentType,
                         DocumentAdded = d.DocumentAdded,
-                        UserId = d.UserId,
+                        JobId = d.JobId,
                     });
                 return query.ToArray();
             }
@@ -41,17 +41,17 @@ namespace JobSeed.Services
                 DocumentType = model.DocumentType,
                 DocumentAdded = model.DocumentAdded,
                 DocSubmitted = DateTimeOffset.Now,
-                UserId = model.UserId,
+                JobId = model.JobId,
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                entity.Jobs = new List<Job>();
-                foreach (int id in model.JobId)
-                {
-                    var job = ctx.Jobs.Find(id);
-                    entity.Jobs.Add(job);
-                }
+                //entity.Jobs = new List<Job>();
+                //foreach (int id in model.JobId)
+                //{
+                //    var job = ctx.Jobs.Find(id);
+                //    entity.Jobs.Add(job);
+                //}
                 ctx.Documents.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -71,7 +71,7 @@ namespace JobSeed.Services
                         DocumentType = entity.DocumentType,
                         DocSubmitted = entity.DocSubmitted,
                         ModifiedUtc = entity.ModifiedUtc,
-                        UserId = entity.UserId
+                        JobId = entity.JobId
                     };
             }
         }
@@ -86,13 +86,14 @@ namespace JobSeed.Services
                 entity.DocumentType = model.DocumentType;
                 entity.DocumentAdded = model.DocumentAdded;
                 entity.ModifiedUtc = DateTimeOffset.Now;
+                entity.JobId = model.JobId;
                 
-                entity.Jobs = new List<Job>();
-                foreach (int id in model.JobId)
-                {
-                    var job = ctx.Jobs.Find(id);
-                    entity.Jobs.Add(job);
-                }
+                //entity.Jobs = new List<Job>();
+                //foreach (int id in model.JobId)
+                //{
+                //    var job = ctx.Jobs.Find(id);
+                //    entity.Jobs.Add(job);
+                //}
                 return ctx.SaveChanges() == 1;
             }
         }

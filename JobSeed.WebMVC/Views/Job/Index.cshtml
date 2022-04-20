@@ -6,67 +6,78 @@
 
 <h2>Your Job List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Position)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Company)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.URL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Salary)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-    </tr>
+<body style="background-color:#FFF5EE;">
+    <h2 class="text-center">Your Documents</h2>
 
-    @foreach (var item in Model)
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.JobId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Position)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.URL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.JobId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.JobId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.JobId }) |
-            </td>
-        </tr>
+        <div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
-</table>
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.URL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.URL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.JobId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.JobId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.JobId }) |
+                </td>
+            </tr>
+        }
+    </table>
+</body>

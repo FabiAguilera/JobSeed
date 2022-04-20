@@ -58,9 +58,13 @@
     <Compile Include="Job.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="JobStatus.cs" />
-    <Compile Include="Migrations\202204182216394_thirdMigrate.cs" />
-    <Compile Include="Migrations\202204182216394_thirdMigrate.Designer.cs">
-      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
+    <Compile Include="Migrations\202204182309219_InitialCreate.cs" />
+    <Compile Include="Migrations\202204182309219_InitialCreate.Designer.cs">
+      <DependentUpon>202204182309219_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204182310515_TestOne.cs" />
+    <Compile Include="Migrations\202204182310515_TestOne.Designer.cs">
+      <DependentUpon>202204182310515_TestOne.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +75,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204182216394_thirdMigrate.resx">
-      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204182309219_InitialCreate.resx">
+      <DependentUpon>202204182309219_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204182310515_TestOne.resx">
+      <DependentUpon>202204182310515_TestOne.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

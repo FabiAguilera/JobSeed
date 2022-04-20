@@ -24,6 +24,8 @@ namespace JobSeed.Models
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
-        public virtual ICollection<int> DocumentId { get; set; }
+        public virtual ICollection<int?> DocumentId { get; set; }
+        public virtual JobStatus Status { get; set; }
+
     }
 }
