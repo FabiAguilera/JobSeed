@@ -70,7 +70,7 @@ namespace JobSeed.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Status
-                    .Single(e => e.StatusId == model.StatusId && e.UserId == _userId);
+                    .Single(e => e.StatusId == model.StatusId);
 
                 entity.StatusId = model.StatusId;
                 entity.Status = model.Status;

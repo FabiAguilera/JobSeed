@@ -14,6 +14,5 @@ C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.cspro
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.dll
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.pdb
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.csproj.AssemblyReference.cache
-C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.Migrations.InitialCreate.resources
+C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.Migrations.FinalMig.resources
 C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.csproj.GenerateResource.cache
-C:\EFA\SD116\Red Badge\JobSeed\JobSeed\JobSeed.Data\obj\Debug\JobSeed.Data.Migrations.TestOne.resources

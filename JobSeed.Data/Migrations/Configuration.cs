@@ -10,7 +10,6 @@ namespace JobSeed.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "JobSeed.Data.ApplicationDbContext";
         }
 
         protected override void Seed(JobSeed.Data.ApplicationDbContext context)
