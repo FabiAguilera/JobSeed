@@ -30,7 +30,9 @@ namespace JobSeed.Data
         [ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-        
-        public virtual ICollection<Job> Jobs { get; set; }
+
+        [ForeignKey("Job")]
+        public int JobId { get; set; }
+        public virtual Job Job { get; set; }
     }
 }

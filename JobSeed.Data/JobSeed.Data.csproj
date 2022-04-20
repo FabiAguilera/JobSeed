@@ -58,9 +58,9 @@
     <Compile Include="Job.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="JobStatus.cs" />
-    <Compile Include="Migrations\202204182216394_thirdMigrate.cs" />
-    <Compile Include="Migrations\202204182216394_thirdMigrate.Designer.cs">
-      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
+    <Compile Include="Migrations\202204200014296_FinalMig.cs" />
+    <Compile Include="Migrations\202204200014296_FinalMig.Designer.cs">
+      <DependentUpon>202204200014296_FinalMig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204182216394_thirdMigrate.resx">
-      <DependentUpon>202204182216394_thirdMigrate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204200014296_FinalMig.resx">
+      <DependentUpon>202204200014296_FinalMig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

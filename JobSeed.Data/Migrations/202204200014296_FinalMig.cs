@@ -3,7 +3,7 @@ namespace JobSeed.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class thirdMigrate : DbMigration
+    public partial class FinalMig : DbMigration
     {
         public override void Up()
         {
@@ -17,10 +17,13 @@ namespace JobSeed.Data.Migrations
                         DocSubmitted = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                         UserId = c.String(maxLength: 128),
+                        JobId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DocumentId)
                 .ForeignKey("dbo.ApplicationUser", t => t.UserId)
-                .Index(t => t.UserId);
+                .ForeignKey("dbo.Job", t => t.JobId, cascadeDelete: true)
+                .Index(t => t.UserId)
+                .Index(t => t.JobId);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -128,35 +131,19 @@ namespace JobSeed.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.JobDocument",
-                c => new
-                    {
-                        Job_JobId = c.Int(nullable: false),
-                        Document_DocumentId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Job_JobId, t.Document_DocumentId })
-                .ForeignKey("dbo.Job", t => t.Job_JobId, cascadeDelete: true)
-                .ForeignKey("dbo.Document", t => t.Document_DocumentId, cascadeDelete: true)
-                .Index(t => t.Job_JobId)
-                .Index(t => t.Document_DocumentId);
-            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Document", "JobId", "dbo.Job");
             DropForeignKey("dbo.Document", "UserId", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.JobStatus", "StatusId", "dbo.Job");
             DropForeignKey("dbo.JobStatus", "UserId", "dbo.ApplicationUser");
-            DropForeignKey("dbo.JobDocument", "Document_DocumentId", "dbo.Document");
-            DropForeignKey("dbo.JobDocument", "Job_JobId", "dbo.Job");
             DropForeignKey("dbo.Job", "UserId", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
-            DropIndex("dbo.JobDocument", new[] { "Document_DocumentId" });
-            DropIndex("dbo.JobDocument", new[] { "Job_JobId" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
@@ -164,8 +151,8 @@ namespace JobSeed.Data.Migrations
             DropIndex("dbo.JobStatus", new[] { "StatusId" });
             DropIndex("dbo.Job", new[] { "UserId" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.Document", new[] { "JobId" });
             DropIndex("dbo.Document", new[] { "UserId" });
-            DropTable("dbo.JobDocument");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityUserLogin");

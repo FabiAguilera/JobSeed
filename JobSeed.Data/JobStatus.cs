@@ -32,7 +32,7 @@ namespace JobSeed.Data
         [Display(Name = "Job Status Modified")]
         public DateTimeOffset? ModifiedUTc { get; set; }
 
-       [ForeignKey(nameof(ApplicationUser))]
+        [ForeignKey(nameof(ApplicationUser))]
         public string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
